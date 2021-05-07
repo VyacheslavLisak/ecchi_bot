@@ -60,7 +60,7 @@ async def start_reddit_bot(channel):
                 if submission is None:
                     break
                 if first == False:
-                    await channel.send(submission.title)
+                    await channel.send("----------------------------------------------------\n" + submission.title)
                     await channel.send(submission.url)
             first = False
             await client.change_presence(status=discord.Status.online, activity=game)
