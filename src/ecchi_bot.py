@@ -45,7 +45,7 @@ async def on_ready():
     await start_reddit_bot(ecchi_channel)
 
 def start_streams():
-    submission_stream = (reddit.subreddit("ecchi").stream.submissions(pause_after=-1)
+    submission_stream = (reddit.subreddit("ecchi+hentai").stream.submissions(pause_after=-1)
                          if True else [])
     return submission_stream
 
@@ -60,6 +60,7 @@ async def start_reddit_bot(channel):
                 if submission is None:
                     break
                 if first == False:
+                    await channel.send(submission.title)
                     await channel.send(submission.url)
             first = False
             await client.change_presence(status=discord.Status.online, activity=game)
