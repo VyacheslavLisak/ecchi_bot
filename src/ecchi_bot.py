@@ -35,7 +35,7 @@ async def on_ready():
     pupki = client.get_guild(392581230891106306)
 
     # Set 'test_bot_channel' channel 
-    ecchi_channel = client.get_channel(587654809293815808)
+    ecchi_channel = client.get_channel(836447934241046558)
 
     # Information about bot 
     logger.info('Logged in as:    ' + client.user.name)
