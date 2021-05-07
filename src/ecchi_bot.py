@@ -52,7 +52,7 @@ def start_streams():
 async def start_reddit_bot(channel):
     first = True
     submission_stream = start_streams()
-    game = discord.Game("Ищет пошлые картинки")
+    game = discord.Game("поиск nsfw контента")
 
     while True:
         try:
