@@ -63,13 +63,13 @@ async def start_reddit_bot(channel):
                     await channel.send(submission.url)
             first = False
             await client.change_presence(status=discord.Status.online, activity=game)
-            time.sleep(10)
+            await asyncio.sleep(10)
         except KeyboardInterrupt:
             logger.error('KeyboardInterrupt exception')
             sys.exit(0)
         except Exception as e:
             logger.error('Error:', e)
-            time.sleep(30)
+            await asyncio.sleep(30)
             submission_stream = start_streams() 
 
 # Authorization on Reddit
