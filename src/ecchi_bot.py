@@ -51,7 +51,8 @@ def start_streams():
 
 async def start_reddit_bot(channel):
     first = True
-    submission_stream = start_streams()   
+    submission_stream = start_streams()
+    game = discord.Game("Ищет пошлые картинки")
 
     while True:
         try:
@@ -61,7 +62,7 @@ async def start_reddit_bot(channel):
                 if first == False:
                     await channel.send(submission.url)
             first = False
-            await client.change_presence(status=discord.Status.online)
+            await client.change_presence(status=discord.Status.online, activity=game)
             time.sleep(10)
         except KeyboardInterrupt:
             logger.error('KeyboardInterrupt exception')
