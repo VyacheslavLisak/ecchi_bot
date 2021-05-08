@@ -69,8 +69,9 @@ async def start_reddit_bot(channel):
             logger.error('KeyboardInterrupt exception')
             sys.exit(0)
         except Exception as e:
-            logger.error('Error:', e)
+            logger.error('Error:' + str(e))
             await asyncio.sleep(30)
+            first = True
             submission_stream = start_streams() 
 
 # Authorization on Reddit
